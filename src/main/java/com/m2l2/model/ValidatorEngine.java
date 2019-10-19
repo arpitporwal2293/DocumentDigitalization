@@ -56,7 +56,7 @@ public class ValidatorEngine {
     public Document getDetailsTry1(File file) throws IOException {
 
         Document document = new Document();
-        document.setName("Porwal123");
+        document.setName("Porwal");
         document.setFathersName("Hamendra Kumar Porwal");
         document.setDob("12/01/1994");
 

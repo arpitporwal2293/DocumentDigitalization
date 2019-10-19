@@ -17,24 +17,25 @@ public class FileReader {
         List<Profile> profiles = new ArrayList<>();
         File folder = new File(path);
         File[] listOfFiles = folder.listFiles();
+        if(listOfFiles!=null) {
+            for (int i = 0; i < listOfFiles.length; i++) {
 
-        for (int i = 0; i < listOfFiles.length; i++) {
+                Profile profile = new Profile();
+                profile.setId(listOfFiles[i].getName());
 
-            Profile profile = new Profile();
-            profile.setId(listOfFiles[i].getName());
-
-            File f = new File(listOfFiles[i].getAbsolutePath());
-            File[] lof = f.listFiles();
-
-            for (int j = 0; j < lof.length; j++) {
-                if (lof[j].isFile()) {
-                    com.m2l2.beans.File file = new com.m2l2.beans.File();
-                    file.setPath(lof[j].getAbsolutePath());
-                    profile.getFiles().add(file);
+                File f = new File(listOfFiles[i].getAbsolutePath());
+                File[] lof = f.listFiles();
+                if(lof!=null) {
+                    for (int j = 0; j < lof.length; j++) {
+                        if (lof[j].isFile()) {
+                            com.m2l2.beans.File file = new com.m2l2.beans.File();
+                            file.setPath(lof[j].getAbsolutePath());
+                            profile.getFiles().add(file);
+                        }
+                    }
                 }
+                profiles.add(profile);
             }
-
-            profiles.add(profile);
         }
 
         return profiles;

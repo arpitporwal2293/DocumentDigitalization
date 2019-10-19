@@ -15,7 +15,7 @@ public class NameValidator {
 
      for(int i=0;i<name1Arr.length;i++){
          for(int j=0;j<name2Arr.length;j++){
-             if(name1Arr[i].toLowerCase().equals(name2Arr[j])){
+             if(name1Arr[i].toLowerCase().equals(name2Arr[j].toLowerCase())){
                  flag = true;
              }
          }
@@ -23,7 +23,7 @@ public class NameValidator {
 
         for(int i=0;i<name2Arr.length;i++){
             for(int j=0;j<name1Arr.length;j++){
-                if(name2Arr[i].toLowerCase().equals(name1Arr[j])){
+                if(name2Arr[i].toLowerCase().equals(name1Arr[j].toLowerCase())){
                     flag = true;
                 }
             }
