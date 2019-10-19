@@ -14,13 +14,13 @@ public class FatherNameComparator {
 
     public Response compareName(Document document1, Document document2, Response response){
 
-        if(StringUtils.isEmpty(document1.getName()) || StringUtils.isEmpty(document2.getName())){
+        if(StringUtils.isEmpty(document1.getFathersName()) || StringUtils.isEmpty(document2.getFathersName())){
             response.setFault(true);
             response.getErrorValidation().add("Fault Found: Father's Name not found in document");
             return response;
         }
 
-        if(!nameValidator.checkName(document1.getName(), document2.getName())) {
+        if(!nameValidator.checkName(document1.getFathersName(), document2.getFathersName())) {
             response.setFault(true);
             response.getErrorValidation().add("Fault Found: Father's Name mismatch");
         }
