@@ -1,6 +1,6 @@
 package com.m2l2.controller;
 
-import com.m2l2.Model.ValidatorEngine;
+import com.m2l2.model.ValidatorEngine;
 import com.m2l2.beans.Profile;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;

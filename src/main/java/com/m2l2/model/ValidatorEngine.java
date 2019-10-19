@@ -1,4 +1,4 @@
-package com.m2l2.Model;
+package com.m2l2.model;
 
 import com.m2l2.beans.Document;
 import com.m2l2.beans.File;

@@ -1,6 +1,5 @@
-package com.m2l2.Model;
+package com.m2l2.model;
 
-import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.m2l2.beans.Document;
 import org.springframework.stereotype.Component;
