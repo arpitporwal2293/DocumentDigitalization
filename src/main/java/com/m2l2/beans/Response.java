@@ -8,12 +8,10 @@ import java.util.List;
 
 @Data
 @Component
-public class Profile{
+public class Response {
 
     private String id;
-    private Person person;
-    private String folderPath;
-    private List<File> files = new ArrayList<>();
-    private List<Document> documents = new ArrayList<>();
+    private List<String> errorValidation = new ArrayList<>();
+    private Boolean fault = false;
 
 }

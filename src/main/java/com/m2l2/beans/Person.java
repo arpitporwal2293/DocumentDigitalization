@@ -9,8 +9,8 @@ import java.util.Date;
 @Component
 public class Person {
 
-    String name;
-    Date dob;
-    String address;
+    private String name;
+    private Date dob;
+    private String address;
 
 }

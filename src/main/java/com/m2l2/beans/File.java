@@ -5,6 +5,6 @@ import lombok.Data;
 @Data
 public class File {
 
-    String path;
+    private String path;
 
 }

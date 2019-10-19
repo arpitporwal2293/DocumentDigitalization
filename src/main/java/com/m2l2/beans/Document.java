@@ -7,8 +7,8 @@ import org.springframework.stereotype.Component;
 @Component
 public class Document{
 
-    String type;
-    String name;
-    String dob;
+    private String name;
+    private String dob;
+    private String fathersName;
 
 }
