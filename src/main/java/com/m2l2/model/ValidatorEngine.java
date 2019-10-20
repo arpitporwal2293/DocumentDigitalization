@@ -42,7 +42,7 @@ public class ValidatorEngine {
 
             //add documents to profile
             for (File file : profile.getFiles()) {
-                //profile.getDocuments().add(getDetails(file));
+                getDetails(file);
                 profile.getDocuments().add(getDetailsTry1(file));
                 profile.getDocuments().add(getDetailsTry2(file));
             }
@@ -74,9 +74,22 @@ public class ValidatorEngine {
         return document;
     }
 
+    public void getDetails(File file) throws IOException {
+
+        String[] cmd = {PYTHON, SCRIPT, file.getPath(), file.getType()};
+        Process p = Runtime.getRuntime().exec(cmd);
+        BufferedReader br = new BufferedReader(new InputStreamReader(p.getInputStream()));
+        String line = "";
+        while ((line = br.readLine()) != null) {
+            line = line + "\n";
+        }
+
+        System.out.println(line);
+    }
+
     /*public Document getDetails(File file) throws IOException {
 
-        String[] cmd = {PYTHON, SCRIPT, file.getPath()};
+        String[] cmd = {PYTHON, SCRIPT, file.getPath(), file.getType()};
         Process p = Runtime.getRuntime().exec(cmd);
         BufferedReader br = new BufferedReader(new InputStreamReader(p.getInputStream()));
         String line = "";

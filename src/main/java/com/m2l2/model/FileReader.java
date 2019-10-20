@@ -30,6 +30,7 @@ public class FileReader {
                         if (lof[j].isFile()) {
                             com.m2l2.beans.File file = new com.m2l2.beans.File();
                             file.setPath(lof[j].getAbsolutePath());
+                            file.setType(lof[j].getName());
                             profile.getFiles().add(file);
                         }
                     }
