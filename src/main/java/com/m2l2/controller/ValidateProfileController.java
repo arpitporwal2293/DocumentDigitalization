@@ -18,7 +18,7 @@ import java.util.List;
 @RestController
 public class ValidateProfileController {
 
-    private final String PATH = "C:\\Users\\arporwal\\Documents\\My Received Files\\investments\\IPSF kit FY 2018-19\\498068IPSF201819\\Rent Agreement\\";
+    private final String PATH = "C:\\Users\\Netan\\Desktop\\Demo_Images\\Rent_Agreement\\";
 
     @Autowired
     ValidatorEngine validatorEngine;

@@ -8,10 +8,10 @@ import org.springframework.stereotype.Component;
 @Component
 public class Reader {
 
-    public Document read(String data) throws RuntimeException {
+    //TODO
+    public Document read(PythonDto pythonDto) throws RuntimeException {
         ObjectMapper mapper = new ObjectMapper();
         try {
-            final PythonDto pythonDto = mapper.readValue(data, PythonDto.class);
             return new PythonDtoToDocumentMapper().apply(pythonDto);
         } catch (Exception e) {
             e.printStackTrace();
