@@ -42,9 +42,9 @@ public class ValidatorEngine {
 
             //add documents to profile
             for (File file : profile.getFiles()) {
-                profile.getDocuments().add(getDetails(file));
-                //profile.getDocuments().add(getDetailsTry1(file));
-                //profile.getDocuments().add(getDetailsTry2(file));
+                //profile.getDocuments().add(getDetails(file));
+                profile.getDocuments().add(getDetailsTry1(file));
+                profile.getDocuments().add(getDetailsTry2(file));
             }
 
             //compare document information
@@ -54,7 +54,7 @@ public class ValidatorEngine {
         return responses;
     }
 
-    /*public Document getDetailsTry1(File file) throws IOException {
+    public Document getDetailsTry1(File file) throws IOException {
 
         Document document = new Document();
         document.setName("Porwal");
@@ -72,9 +72,9 @@ public class ValidatorEngine {
         document.setDob("1994");
 
         return document;
-    }*/
+    }
 
-    public Document getDetails(File file) throws IOException {
+    /*public Document getDetails(File file) throws IOException {
 
         String[] cmd = {PYTHON, SCRIPT, file.getPath()};
         Process p = Runtime.getRuntime().exec(cmd);
@@ -84,7 +84,7 @@ public class ValidatorEngine {
             line = line + "\n";
         }
         return reader.read(line);
-    }
+    }*/
 
     public Response compareDetails(List<Document> documents, Response response){
         return documentComparator.compare(documents, response);
