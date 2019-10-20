@@ -1,14 +1,26 @@
 package com.m2l2.beans;
 
-import lombok.Data;
 import org.springframework.stereotype.Component;
 
+import java.util.StringJoiner;
+
 @Component
-public class Document{
+public class Document {
 
     private String name;
     private String dob;
     private String fathersName;
+    private String id;
+    private String type;
+    private String gender;
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
 
     public String getName() {
         return name;
@@ -34,12 +46,31 @@ public class Document{
         this.fathersName = fathersName;
     }
 
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
     @Override
     public String toString() {
-        return "Document{" +
-                "name='" + name + '\'' +
-                ", dob='" + dob + '\'' +
-                ", fathersName='" + fathersName + '\'' +
-                '}';
+        return new StringJoiner(", ", Document.class.getSimpleName() + "[", "]")
+                .add("name='" + name + "'")
+                .add("dob='" + dob + "'")
+                .add("fathersName='" + fathersName + "'")
+                .add("id='" + id + "'")
+                .add("type='" + type + "'")
+                .add("gender='" + gender + "'")
+                .toString();
     }
 }
