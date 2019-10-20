@@ -3,6 +3,7 @@ package com.m2l2.controller;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.m2l2.beans.Response;
 import com.m2l2.model.FileReader;
+import com.m2l2.model.PersistResult;
 import com.m2l2.model.ValidatorEngine;
 import com.m2l2.beans.Profile;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,12 +26,16 @@ public class ValidateProfileController {
     @Autowired
     FileReader fileReader;
 
+    @Autowired
+    PersistResult persistResult;
+
     @RequestMapping(
             value = "/validateProfile",
             method = RequestMethod.GET)
     public List<Response> validateProfile() throws IOException {
         List<Profile> profiles = fileReader.readFiles(PATH);
         List<Response> responses = validatorEngine.validate(profiles);
+        persistResult.save(responses);
         return responses;
     }
 
